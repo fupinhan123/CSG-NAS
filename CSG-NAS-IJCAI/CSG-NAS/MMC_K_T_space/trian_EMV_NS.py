@@ -214,9 +214,9 @@ def train_individual(individual_code,individual_wight, result_save_dir='.', gpu=
        adam = tf.keras.optimizers.Adam()
 
     elif  K_T == 1:
-       pat = 30
-       epochss = 300
-       adam = tf.keras.optimizers.SGD(learning_rate= 0.0001)
+       pat = 5
+       epochss = 20
+       adam = tf.keras.optimizers.SGD(learning_rate= 0.005)
 
     topk = tf.keras.metrics.top_k_categorical_accuracy
     model.compile(loss='categorical_crossentropy', optimizer=adam, metrics=['acc', topk])
